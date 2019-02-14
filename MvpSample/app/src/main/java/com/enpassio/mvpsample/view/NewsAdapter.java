@@ -2,6 +2,7 @@ package com.enpassio.mvpsample.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.enpassio.mvpsample.R;
 import com.enpassio.mvpsample.data.model.Article;
 import com.enpassio.mvpsample.utils.GlideApp;
+import com.enpassio.mvpsample.utils.MyDiffUtilCallback;
 
 import java.util.ArrayList;
 
@@ -25,8 +27,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     /* Store the context for easy access */
     private Context mContext;
 
-    public NewsAdapter(Context context, ArrayList<Article> articleLisr) {
-        listOfArticle = articleLisr;
+    public NewsAdapter(Context context, ArrayList<Article> articleList) {
+        listOfArticle = articleList;
         mContext = context;
     }
 
@@ -79,7 +81,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     }
 
     public void setArticleData(ArrayList<Article> articleList) {
-        listOfArticle = articleList;
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new MyDiffUtilCallback(articleList, listOfArticle));
+        this.listOfArticle.clear();
+        this.listOfArticle.addAll(articleList);
+        diffResult.dispatchUpdatesTo(this);
     }
 
     /*
