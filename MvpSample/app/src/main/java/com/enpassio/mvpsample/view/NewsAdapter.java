@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.enpassio.mvpsample.R;
 import com.enpassio.mvpsample.data.model.Article;
+import com.enpassio.mvpsample.utils.GlideApp;
 
 import java.util.ArrayList;
 
@@ -50,7 +51,26 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder viewHolder, int position) {
         /* Get the data model based on position */
         Article currentArticle = listOfArticle.get(position);
+        bindTo(currentArticle, viewHolder);
 
+    }
+
+    private void bindTo(Article currentArticle, ViewHolder viewHolder) {
+
+        viewHolder.articleTitleTextView.setText("" + currentArticle.getTitle());
+        viewHolder.articleTitleTextView.setSelected(true);
+        viewHolder.articleAuthorTextView.setText("" + currentArticle.getAuthor());
+        String date = currentArticle.getPublishedAt();
+        String[] dateArray = date.split("T");
+
+        viewHolder.articlePublishDateTextView.setText("" + dateArray[0] + " " + dateArray[1].subSequence(0, dateArray[1].length() - 1));
+        viewHolder.articleAuthorTextView.setText(currentArticle.getUrl());
+        viewHolder.articleTitleTextView.setSelected(true);
+        GlideApp
+                .with(mContext)
+                .load(currentArticle.getUrlToImage())
+                .centerCrop()
+                .into(viewHolder.articlePosterImageView);
     }
 
     @Override
