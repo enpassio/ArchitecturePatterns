@@ -1,4 +1,4 @@
-package com.enpassio.mvpsample;
+package com.enpassio.mvpsample.view;
 
 import android.os.Bundle;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.enpassio.mvpsample.R;
 
 public class MainActivity extends AppCompatActivity {
 
