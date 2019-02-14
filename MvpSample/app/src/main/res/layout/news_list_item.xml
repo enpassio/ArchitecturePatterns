@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:context=".view.MainActivity">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_selector"
+        android:clickable="true"
+        android:focusable="true"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_view_article_poster"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#dddddd"
+                android:contentDescription="@string/image_for_the_article"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/text_view_published_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:textColor="#000000"
+                    tools:text="published date" />
+
+                <TextView
+                    android:id="@+id/text_view_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:ellipsize="marquee"
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    tools:text="author" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_view_article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="marquee"
+                android:gravity="center_horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:text="Title" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
