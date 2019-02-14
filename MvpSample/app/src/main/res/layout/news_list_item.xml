@@ -26,7 +26,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/list_item_image"
+                android:id="@+id/image_view_article_poster"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="#dddddd"
@@ -42,7 +42,7 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/list_item_published_date"
+                    android:id="@+id/text_view_published_date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -52,7 +52,7 @@
                     tools:text="published date" />
 
                 <TextView
-                    android:id="@+id/list_item_author"
+                    android:id="@+id/text_view_author"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -65,7 +65,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/list_item_title"
+                android:id="@+id/text_view_article_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
