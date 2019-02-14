@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MvpSample</string>
     <string name="enter_topic_to_search_news_for">Enter news topic to search</string>
+    <string name="image_for_the_article">Image for the article</string>
 </resources>
