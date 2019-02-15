@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please input a query for news", Toast.LENGTH_SHORT).show();
                 } else {
                     //on the presenter instance, send this search query to fetch data for
-                    //mainActivityPresenter.onTopicSearchedSearched(usersSearchQuery);
+                    //mainActivityPresenter.onTopicSearched(usersSearchQuery); //where mainActivityPresenter is presenter instance
                 }
             }
         });
@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
             public void onRefresh() {
                 if (usersSearchQuery == null || usersSearchQuery.isEmpty()) {
                     //if there is no search input made, search for top headlines from NewsApi.org
-                    //mainActivityPresenter.onInitialListRequested("Top headlines");
+                    //mainActivityPresenter.onInitialListRequested("Top headlines"); //where mainActivityPresenter is presenter instance
                 } else {
-                    //mainActivityPresenter.onTopicSearchedSearched(usersSearchQuery);
+                    //mainActivityPresenter.onTopicSearched(usersSearchQuery); //where mainActivityPresenter is presenter instance
                 }
             }
         });
