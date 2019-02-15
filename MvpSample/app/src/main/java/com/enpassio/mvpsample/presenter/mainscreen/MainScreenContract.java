@@ -14,7 +14,7 @@ public interface MainScreenContract {
     interface ViewActions {
         void onInitialListRequested();
 
-        void onTopicSearchedSearched(String searchQuery);
+        void onTopicSearched(String searchQuery);
     }
 
     interface RecyclerView extends RemoteView {
